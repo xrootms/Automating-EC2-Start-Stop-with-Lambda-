@@ -25,7 +25,7 @@
 </table>
 
 
-## ⚙️ Steps to Set Up
+## Steps to Set Up
 
 ### 1. Provisioned an EC2 Instance
 Launch an EC2 instance you want to manage automatically.  
