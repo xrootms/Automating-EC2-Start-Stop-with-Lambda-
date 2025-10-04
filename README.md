@@ -1,6 +1,14 @@
 ## Automating EC2 Start/Stop with AWS Lambda & EventBridge: Step-by-Step Guide
 This project helps optimize cloud costs by shutting down instances during non-working hours and restarting them when needed. The system ensures that EC2 instances are stopped automatically during idle periods (like nights or weekends) and started again during active hours.
 
+<table>
+  <tr>
+    <td><img src="./image/image.jpg" alt="LEMP Diagram" width="2000"></td>
+     <td>
+    </td>
+  </tr>
+</table>
+
 ## Key Steps:
 1.	Provisioned an EC2 Instance – Created an EC2 instance to demonstrate the automation.
 2.	Configured IAM Role & Policies – Assigned an IAM role with least-privilege permissions to allow Lambda to start/stop EC2 securely.
