@@ -3,10 +3,10 @@
 
 ## Key Steps:
 1.	𝐏𝐫𝐨𝐯𝐢𝐬𝐢𝐨𝐧𝐞𝐝 𝐚𝐧 𝐄𝐂𝟐 𝐈𝐧𝐬𝐭𝐚𝐧𝐜𝐞 – Created an EC2 instance to demonstrate the automation.
-2.	Configured IAM Role & Policies – Assigned an IAM role with least-privilege permissions to allow Lambda to start/stop EC2 securely.
-3.	Configured Lambda Function – Wrote a Python-based Lambda function to handle EC2 start/stop logic.
-4.	Integrated with EventBridge Scheduler – Set up cron-based EventBridge rules to trigger Lambda at specific times (e.g., stop at 10 PM, start at 8 AM).
-5.	Verify the Lambda Function & EventBridge Rule – Tested the workflow to confirm EC2 stops/starts as expected and verified EventBridge rule execution
+2.	𝐂𝐨𝐧𝐟𝐢𝐠𝐮𝐫𝐞𝐝 𝐈𝐀𝐌 𝐑𝐨𝐥𝐞 & 𝐏𝐨𝐥𝐢𝐜𝐢𝐞𝐬 – Assigned an IAM role with least-privilege permissions to allow Lambda to start/stop EC2 securely.
+3.	𝐂𝐨𝐧𝐟𝐢𝐠𝐮𝐫𝐞𝐝 𝐋𝐚𝐦𝐛𝐝𝐚 𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧 – Wrote a Python-based Lambda function to handle EC2 start/stop logic.
+4.	𝐈𝐧𝐭𝐞𝐠𝐫𝐚𝐭𝐞𝐝 𝐰𝐢𝐭𝐡 𝐄𝐯𝐞𝐧𝐭𝐁𝐫𝐢𝐝𝐠𝐞 Scheduler – Set up cron-based EventBridge rules to trigger Lambda at specific times (e.g., stop at 10 PM, start at 8 AM).
+5.	𝐕𝐞𝐫𝐢𝐟𝐲 𝐭𝐡𝐞 𝐋𝐚𝐦𝐛𝐝𝐚 𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧 & 𝐄𝐯𝐞𝐧𝐭𝐁𝐫𝐢𝐝𝐠𝐞 𝐑𝐮𝐥𝐞 – Tested the workflow to confirm EC2 stops/starts as expected and verified EventBridge rule execution
 	
 ## Cost Optimization:
 -	Reduce EC2 running hours by up to 70–80% during inactive times.
