@@ -4,11 +4,11 @@ I built an automation to optimize EC2 usage by stopping and starting instances o
 The system ensures that EC2 instances are stopped automatically during idle periods (like nights or weekends) and started again during active hours.
 
 ## Key Steps:
-       1.	Provisioned an EC2 Instance – Created an EC2 instance to demonstrate the automation.
-       2.	Configured IAM Role & Policies – Assigned an IAM role with least-privilege permissions to allow Lambda to start/stop EC2 securely.
-       3.	Configured Lambda Function – Wrote a Python-based Lambda function to handle EC2 start/stop logic.
-       4.	Integrated with EventBridge Scheduler – Set up cron-based EventBridge rules to trigger Lambda at specific times (e.g., stop at 10 PM, start at 8 AM).
-       5.	Verify the Lambda Function & EventBridge Rule – Tested the workflow to confirm EC2 stops/starts as expected and verified EventBridge rule execution.
+1.	Provisioned an EC2 Instance – Created an EC2 instance to demonstrate the automation.
+2.	Configured IAM Role & Policies – Assigned an IAM role with least-privilege permissions to allow Lambda to start/stop EC2 securely.
+3.	Configured Lambda Function – Wrote a Python-based Lambda function to handle EC2 start/stop logic.
+4.	Integrated with EventBridge Scheduler – Set up cron-based EventBridge rules to trigger Lambda at specific times (e.g., stop at 10 PM, start at 8 AM).
+5.	Verify the Lambda Function & EventBridge Rule – Tested the workflow to confirm EC2 stops/starts as expected and verified EventBridge rule execution
 	
 ## Use Cases & Cost Optimization:
 •	Reduce EC2 running hours by up to 70–80% during inactive times.
@@ -39,7 +39,6 @@ The system ensures that EC2 instances are stopped automatically during idle peri
 +-------------------+
 ```
 
----
 
 ## ⚙️ Steps to Set Up
 
@@ -77,7 +76,6 @@ Create Role and Attach the following policy to your role:
 }
 ```
 
----
 
 ### 3. Configure the AWS Lambda Function
 Search for Lambda and Create a function.
@@ -120,9 +118,7 @@ Use EventBridge (CloudWatch Events) to schedule Lambda invocations.
 ### 5. Verify the Lambda Function & EventBridge Rule 
 refresh the EC2 Console and you can EC2 Instance has Stopped Automatically.
 
---
-##  Author
-**Saif Uddin**  
+
 
 
 ---
