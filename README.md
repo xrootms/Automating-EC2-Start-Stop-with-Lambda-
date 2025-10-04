@@ -1,18 +1,25 @@
-# AWS Lambda EC2 Scheduler
+# Automating EC2 Start/Stop with AWS Lambda & EventBridge
+## This project helps optimize cloud costs by shutting down instances during non-working hours and restarting them when needed.
+I built an automation to optimize EC2 usage by stopping and starting instances on a schedule.
+The system ensures that EC2 instances are stopped automatically during idle periods (like nights or weekends) and started again during active hours.
 
-Automate starting and stopping Amazon EC2 instances using AWS Lambda and Amazon EventBridge.  
-This project helps optimize cloud costs by shutting down instances during non-working hours and restarting them when needed.
+## Key Steps:
+       1.	'Provisioned an EC2 Instance' – Created an EC2 instance to demonstrate the automation.
+       2.	'Configured IAM Role & Policies' – Assigned an IAM role with least-privilege permissions to allow Lambda to start/stop EC2 securely.
+       3.	'Configured Lambda Function' – Wrote a Python-based Lambda function to handle EC2 start/stop logic.
+       4.	'Integrated with EventBridge Scheduler' – Set up cron-based EventBridge rules to trigger Lambda at specific times (e.g., stop at 10 PM, start at 8 AM).
+       5.	'Verify the Lambda Function & EventBridge Rule' – Tested the workflow to confirm EC2 stops/starts as expected and verified EventBridge rule execution.
+	
+## Use Cases & Cost Optimization:
+•	Reduce EC2 running hours by up to 70–80% during inactive times.
+•	Development or testing environments that don’t need 24/7 uptime.
+•	Improved operational efficiency with hands-free instance management.
 
 ---
 
 ## 🧠 Project Overview
 
-This automation solution is built using:
-- **AWS Lambda** – Executes the start/stop logic.
-- **Amazon EventBridge** – Triggers the Lambda function based on a schedule.
-- **AWS IAM Role** – Grants Lambda permissions to manage EC2 and write logs to CloudWatch.
 
-The system ensures that EC2 instances are stopped automatically during idle periods (like nights or weekends) and started again during active hours.
 
 ---
 
@@ -42,12 +49,13 @@ The system ensures that EC2 instances are stopped automatically during idle peri
 
 ## ⚙️ Steps to Set Up
 
-### 1. Create an EC2 Instance
+### 1. Provisioned an EC2 Instance
 Launch an EC2 instance you want to manage automatically.  
 Tag it appropriately (e.g., `AutoStop = true`) so the Lambda can identify it.
 
-### 2. Create an IAM Role for Lambda
-Attach the following policy to your Lambda role:
+### 2. Configure IAM Role & Policies. 
+Create Policy with existing Policy with the below policy.
+Create Role and Attach the following policy to your role:
 
 ```json
 {
@@ -78,8 +86,10 @@ Attach the following policy to your Lambda role:
 ---
 
 ### 3. Configure the AWS Lambda Function
-
-Example Python code:
+Search for Lambda and Create a function.
+Select the Runtime as Python 3.9. 
+Use an existing role chooses the role we created.
+Under Code, Replace the existing code with the below 
 
 ```python
 import boto3
@@ -102,7 +112,7 @@ def lambda_handler(event, context):
 
 ---
 
-### 4. Create EventBridge Rules
+### 4. Integrated with EventBridge Scheduler
 
 Use EventBridge (CloudWatch Events) to schedule Lambda invocations.
 
@@ -111,10 +121,11 @@ Use EventBridge (CloudWatch Events) to schedule Lambda invocations.
 | Purpose | Cron (UTC) | Description |
 |----------|------------|-------------|
 | Stop instances | `cron(30 16 * * ? *)` | Runs every day at **10:00 PM IST** |
-| Start instances | `cron(30 3 * * ? *)` | Runs every day at **9:00 AM IST** |
 
 *(Note: Adjust the UTC time based on your local time zone.)*
 
+### 5. Verify the Lambda Function & EventBridge Rule 
+refresh the EC2 Console and you can EC2 Instance has Stopped Automatically.
 ---
 
 ## 💰 Cost Optimization
@@ -126,31 +137,12 @@ By automating instance management:
 
 ---
 
-## 🧾 Example Use Cases
-- Development or testing environments that don’t need 24/7 uptime.
-- Cost control for student or demo AWS accounts.
-- Auto start/stop Jenkins or test servers on schedule.
 
----
-
-## 🧩 Future Enhancements
-- Add SNS notifications for status updates.
-- Include DynamoDB or SSM Parameter Store for dynamic instance lists.
-- Integrate with Terraform for infrastructure automation.
-
----
-
-## ⚠️ Disclaimer
-
-This project uses **example values only**.  
-It does **not** include any AWS credentials, secrets, or private information.  
-Always store your keys securely in **AWS Secrets Manager** or **AWS Systems Manager Parameter Store**.
 
 ---
 
 ## 👨‍💻 Author
 **Saif Uddin**  
-_AWS & DevOps Enthusiast_  
-[GitHub Profile](https://github.com/) _(add your link here)_
+
 
 ---
