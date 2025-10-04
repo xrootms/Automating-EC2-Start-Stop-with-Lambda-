@@ -8,15 +8,13 @@ This project helps optimize cloud costs by shutting down instances during non-wo
 4.	Integrated with EventBridge Scheduler – Set up cron-based EventBridge rules to trigger Lambda at specific times (e.g., stop at 10 PM, start at 8 AM).
 5.	Verify the Lambda Function & EventBridge Rule – Tested the workflow to confirm EC2 stops/starts as expected and verified EventBridge rule execution
 	
-## Use Cases & Cost Optimization:
-•	Reduce EC2 running hours by up to 70–80% during inactive times.
-•	Development or testing environments that don’t need 24/7 uptime.
-•	Improved operational efficiency with hands-free instance management.
+## Cost Optimization:
+-	Reduce EC2 running hours by up to 70–80% during inactive times.
+-	Development or testing environments that don’t need 24/7 uptime.
+-	Improved operational efficiency with hands-free instance management.
 
 
 ## Architecture Diagram
-
-**EventBridge → Lambda → EC2 + CloudWatch**
 
 <table>
   <tr>
