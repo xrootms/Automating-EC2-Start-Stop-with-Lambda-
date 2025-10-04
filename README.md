@@ -2,7 +2,7 @@
 This project helps optimize cloud costs by shutting down instances during non-working hours and restarting them when needed. The system ensures that EC2 instances are stopped automatically during idle periods (like nights or weekends) and started again during active hours.
 
 ## Key Steps:
-1.	Provisioned an EC2 Instance – Created an EC2 instance to demonstrate the automation.
+1.	#Provisioned an EC2 Instance# – Created an EC2 instance to demonstrate the automation.
 2.	Configured IAM Role & Policies – Assigned an IAM role with least-privilege permissions to allow Lambda to start/stop EC2 securely.
 3.	Configured Lambda Function – Wrote a Python-based Lambda function to handle EC2 start/stop logic.
 4.	Integrated with EventBridge Scheduler – Set up cron-based EventBridge rules to trigger Lambda at specific times (e.g., stop at 10 PM, start at 8 AM).
