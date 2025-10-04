@@ -15,9 +15,8 @@ The system ensures that EC2 instances are stopped automatically during idle peri
 •	Development or testing environments that don’t need 24/7 uptime.
 •	Improved operational efficiency with hands-free instance management.
 
----
 
-## 🏗️ Architecture Diagram
+## Architecture Diagram
 
 **EventBridge → Lambda → EC2 + CloudWatch**
 
@@ -85,21 +84,13 @@ Under Code, Replace the existing code with the below
 
 ```python
 import boto3
-
 region = 'us-east-1'
-instances = ['i-0abcdef1234567890']  # Example instance ID
+instances = ['i-001e2d04e37ccde3b']
 ec2 = boto3.client('ec2', region_name=region)
 
 def lambda_handler(event, context):
-    action = event.get('action')
-    if action == 'stop':
-        ec2.stop_instances(InstanceIds=instances)
-        print("EC2 instances stopped")
-    elif action == 'start':
-        ec2.start_instances(InstanceIds=instances)
-        print("EC2 instances started")
-    else:
-        print("No valid action specified")
+    print('Stopping instances')
+    ec2.stop_instances(InstanceIds=instances)
 ```
 
 
