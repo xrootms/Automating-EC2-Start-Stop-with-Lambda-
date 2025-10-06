@@ -99,7 +99,7 @@ When you check your EC2 console:
 - The instance should stop automatically at 10 PM
 
 ## 6. Configure Auto Start EC2 (Same as Stop Lambda Function)
-We can create another Lambda function to start your EC2 instance automatically — similar to “Stop EC2” setup.
+We can create another Lambda function to start EC2 instance automatically — similar to “Stop EC2” setup.
 
 
 ---
