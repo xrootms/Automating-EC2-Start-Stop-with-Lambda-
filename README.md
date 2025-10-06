@@ -7,12 +7,14 @@
 3.	𝐂𝐨𝐧𝐟𝐢𝐠𝐮𝐫𝐞𝐝 𝐋𝐚𝐦𝐛𝐝𝐚 𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧 – Wrote a Python-based Lambda function to handle EC2 start/stop logic.
 4.	𝐈𝐧𝐭𝐞𝐠𝐫𝐚𝐭𝐞𝐝 𝐰𝐢𝐭𝐡 𝐄𝐯𝐞𝐧𝐭𝐁𝐫𝐢𝐝𝐠𝐞 Scheduler – Set up cron-based EventBridge rules to trigger Lambda at specific times (e.g., stop at 10 PM, start at 8 AM).
 5.	𝐕𝐞𝐫𝐢𝐟𝐲 𝐭𝐡𝐞 𝐋𝐚𝐦𝐛𝐝𝐚 𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧 & 𝐄𝐯𝐞𝐧𝐭𝐁𝐫𝐢𝐝𝐠𝐞 𝐑𝐮𝐥𝐞 – Tested the workflow to confirm EC2 stops/starts as expected and verified EventBridge rule execution
-	
-## 💰Cost Optimization:
--	Reduce EC2 running hours by up to 70–80% during inactive times.
--	Development or testing environments that don’t need 24/7 uptime.
--	Improved operational efficiency with hands-free instance management.
 
+:
+
+## Impact
+
+- 💰Cost Optimization: Reduced EC2 running hours by up to 70–80% during inactive periods, saving cloud costs significantly..
+- Efficiency Gains: Development or testing environments that don’t need 24/7 uptime.
+- Operational Improvement: Improved operational efficiency with hands-free instance management.
 
 ## Architecture Diagram
 
