@@ -13,7 +13,7 @@
 - 𝐄𝐟𝐟𝐢𝐜𝐢𝐞𝐧𝐜𝐲 𝐆𝐚𝐢𝐧𝐬: Development or testing environments that don’t need 24/7 uptime.
 - 𝐎𝐩𝐞𝐫𝐚𝐭𝐢𝐨𝐧𝐚𝐥 𝐈𝐦𝐩𝐫𝐨𝐯𝐞𝐦𝐞𝐧𝐭: Improved operational efficiency with hands-free instance management.
 
-## Architecture Diagram
+## Diagram
 
 <p align="center">
   <img src="./image/image.jpg" alt="LEMP Diagram" width="600">
@@ -98,7 +98,7 @@ now we have:
 When you check your EC2 console:
 - The instance should stop automatically at 10 PM
 
-## 6. Configure Auto Start EC2 (Same as Stop Lambda Function)
+### 6. Configure Auto Start EC2 (Same as Stop Lambda Function)
 We can create another Lambda function to start EC2 instance automatically — similar to “Stop EC2” setup.
 
 
