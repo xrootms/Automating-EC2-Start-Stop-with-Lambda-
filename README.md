@@ -8,10 +8,7 @@
 4.	𝐈𝐧𝐭𝐞𝐠𝐫𝐚𝐭𝐞𝐝 𝐰𝐢𝐭𝐡 𝐄𝐯𝐞𝐧𝐭𝐁𝐫𝐢𝐝𝐠𝐞 Scheduler – Set up cron-based EventBridge rules to trigger Lambda at specific times (e.g., stop at 10 PM, start at 8 AM).
 5.	𝐕𝐞𝐫𝐢𝐟𝐲 𝐭𝐡𝐞 𝐋𝐚𝐦𝐛𝐝𝐚 𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧 & 𝐄𝐯𝐞𝐧𝐭𝐁𝐫𝐢𝐝𝐠𝐞 𝐑𝐮𝐥𝐞 – Tested the workflow to confirm EC2 stops/starts as expected and verified EventBridge rule execution
 
-:
-
 ## Impact
-
 - 𝐂𝐨𝐬𝐭 𝐎𝐩𝐭𝐢𝐦𝐢𝐳𝐚𝐭𝐢𝐨𝐧 💰: Reduced EC2 running hours by up to 70–80% during inactive periods, saving cloud costs significantly..
 - 𝐄𝐟𝐟𝐢𝐜𝐢𝐞𝐧𝐜𝐲 𝐆𝐚𝐢𝐧𝐬: Development or testing environments that don’t need 24/7 uptime.
 - 𝐎𝐩𝐞𝐫𝐚𝐭𝐢𝐨𝐧𝐚𝐥 𝐈𝐦𝐩𝐫𝐨𝐯𝐞𝐦𝐞𝐧𝐭: Improved operational efficiency with hands-free instance management.
@@ -22,14 +19,10 @@
   <img src="./image/image.jpg" alt="LEMP Diagram" width="600">
 </p>
 
-
-
-
 ## Steps to Set Up
 
 ### 1. Provisioned an EC2 Instance
 Launch an EC2 instance you want to manage automatically.  
-Tag it appropriately (e.g., `AutoStop = true`) so the Lambda can identify it.
 
 ### 2. Configure IAM Role & Policies. 
 Create Policy with existing Policy with the below policy.
@@ -102,9 +95,11 @@ Expression:
 ### 5. Test the Automation
 now we have:
 - Stop Lambda scheduled via EventBridge (e.g., 10 PM IST)
-
 When you check your EC2 console:
 - The instance should stop automatically at 10 PM
+
+## 6. Configure Auto Start EC2 (Same as Stop Lambda Function)
+We can create another Lambda function to start your EC2 instance automatically — similar to “Stop EC2” setup.
 
 
 ---
