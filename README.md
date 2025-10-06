@@ -18,11 +18,11 @@
 
 <table>
   <tr>
-    <td><img src="./image/image.jpg" alt="LEMP Diagram" width="2000"></td>
-     <td>
-    </td>
+    <td><img src="./image/image.jpg" alt="LEMP Diagram" width="800"></td>
+    <td></td>
   </tr>
 </table>
+
 
 
 ## Steps to Set Up
