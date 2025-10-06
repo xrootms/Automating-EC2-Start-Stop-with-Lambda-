@@ -67,10 +67,9 @@ Create Role and Attach the following policy to your role:
 ### 3. Configure the AWS Lambda Function for Stop
 Go to AWS Lambda → Create Function
 - Select the Author from scratch 
-- Name as you want 
-- Search for Lambda and Create a function.
+- Name: stopec2 
 - Select the Runtime as Python 3.9. 
-- Use an existing role chooses the role we created.
+- Use an existing IAM role, chooses the role we created.
 - Under Code, Replace the existing code with the below 
 
 ```python
@@ -100,10 +99,12 @@ Expression:
 
 *(Note: Adjust the UTC time based on your local time zone.)*
 
-### 5. Verify the Lambda Function & EventBridge Rule 
-refresh the EC2 Console and you can EC2 Instance has Stopped Automatically.
+### 5. Test the Automation
+now we have:
+- Stop Lambda scheduled via EventBridge (e.g., 10 PM IST)
 
-
+When you check your EC2 console:
+- The instance should stop automatically at 10 PM
 
 
 ---
