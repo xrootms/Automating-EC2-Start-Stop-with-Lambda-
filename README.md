@@ -12,9 +12,9 @@
 
 ## Impact
 
-- 💰Cost Optimization: Reduced EC2 running hours by up to 70–80% during inactive periods, saving cloud costs significantly..
-- Efficiency Gains: Development or testing environments that don’t need 24/7 uptime.
-- Operational Improvement: Improved operational efficiency with hands-free instance management.
+- 𝐂𝐨𝐬𝐭 𝐎𝐩𝐭𝐢𝐦𝐢𝐳𝐚𝐭𝐢𝐨𝐧 💰: Reduced EC2 running hours by up to 70–80% during inactive periods, saving cloud costs significantly..
+- 𝐄𝐟𝐟𝐢𝐜𝐢𝐞𝐧𝐜𝐲 𝐆𝐚𝐢𝐧𝐬: Development or testing environments that don’t need 24/7 uptime.
+- 𝐎𝐩𝐞𝐫𝐚𝐭𝐢𝐨𝐧𝐚𝐥 𝐈𝐦𝐩𝐫𝐨𝐯𝐞𝐦𝐞𝐧𝐭: Improved operational efficiency with hands-free instance management.
 
 ## Architecture Diagram
 
@@ -64,11 +64,14 @@ Create Role and Attach the following policy to your role:
 ```
 
 
-### 3. Configure the AWS Lambda Function
-Search for Lambda and Create a function.
-Select the Runtime as Python 3.9. 
-Use an existing role chooses the role we created.
-Under Code, Replace the existing code with the below 
+### 3. Configure the AWS Lambda Function for Stop
+Go to AWS Lambda → Create Function
+- Select the Author from scratch 
+- Name as you want 
+- Search for Lambda and Create a function.
+- Select the Runtime as Python 3.9. 
+- Use an existing role chooses the role we created.
+- Under Code, Replace the existing code with the below 
 
 ```python
 import boto3
@@ -80,12 +83,15 @@ def lambda_handler(event, context):
     print('Stopping instances')
     ec2.stop_instances(InstanceIds=instances)
 ```
+- Click Deploy after saving.
 
 
 ### 4. Integrated with EventBridge Scheduler
-
-Use EventBridge (CloudWatch Events) to schedule Lambda invocations.
-
+Now, schedule this Lambda to run automatically at a specific time daily.
+- Go to Amazon EventBridge → Rules → Create Rule
+- Name: StopEc2rule
+- Schedule Pattern: Choose “Schedule expression”
+Expression:
 #### Example cron expressions:
 
 | Purpose | Cron (UTC) | Description |
