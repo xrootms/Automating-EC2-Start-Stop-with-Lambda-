@@ -102,4 +102,5 @@ When you check your EC2 console:
 We can create another Lambda function to start EC2 instance automatically — similar to “Stop EC2” setup.
 
 
+⭐ If you found this project interesting, consider giving it a star!
 ---
